@@ -5,10 +5,14 @@ body{
     color: #fff;
     font-family: "Poppins", sans-serif;
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .inputContainer{
     font-size: 2rem;
     margin-top: 3em;
+    margin-bottom: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
