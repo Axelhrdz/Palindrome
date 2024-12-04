@@ -7,26 +7,34 @@ console.log(result);
 
 
 //Comparing input text with reversed one
-let stat;
+// let stat = false;
 const compare = (regular, reversed) => {
+    // const regTrimmed = regular.trim();
     console.log(regular);
     console.log(reversed);
-    
-    
-    regular.forEach((ele, index) => {
-      if(ele === reversed[index]){
-        console.log(true)
-        stat = true;
-      } else {
-        stat = false;
-        console.log(false)
-      }
-    })
-    if(stat){
-        result.innerText = `${regular.join('')} IS a palindrome`
+
+    if(regular[0] === '_'){
+        // stat = true;
+        result.innerText = `${regular.join('')} IS a palindrome`;
     } else {
-        result.innerText = `${regular.join('')} is NOT a palindrome`
+        
+        regular.forEach((ele, index) => {
+          if(ele === reversed[index]){
+            console.log(true)
+            stat = true;
+          } else {
+            stat = false;
+            console.log(false)
+          }
+        })
+        if(stat){
+            result.innerText = `${regular.join('')} is a palindrome`
+        } else {
+            result.innerText = `${regular.join('')} is NOT a palindrome`
+        }
     }
+    
+    
 }
 
 
@@ -35,6 +43,8 @@ const compare = (regular, reversed) => {
 const palindrome = (word) => {
     
     console.log(word);
+    const trimmed = word.trim();
+    console.log(trimmed);      //STILL WORKING ON TRIM FUNCTION... PENDING
     // console.log(word.split(''));
     // console.log(word.length);
     const wordChars = word.split('');
@@ -43,7 +53,9 @@ const palindrome = (word) => {
     // console.log(wordChars);
     // console.log(wordReversed);
     // console.log(wordReversed[wordReversed.length -1]);
-    
+
+
+
     if(!input.value){
         alert('Please input a value');
     } else if (word.length === 1){
@@ -61,3 +73,13 @@ submit.addEventListener('click', function(e){
 })
 
 
+
+
+//test
+// const word = '_venga';
+// const newWord = word.split('').shift();
+// console.log(newWord);
+
+// if(word[4] === '_'){
+//     console.log(true);  
+// } else console.log(false);  
